@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditorInternal; 
 
 public class Timer : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class Timer : MonoBehaviour
     public int days;
     public bool meditated;
 
+    public WaterPotController waterPot;
+
     void Start() 
     {
         timeIsRunning = true;
         meditated = false;
+
+        
     }
 
     // Update is called once per frame
@@ -30,7 +35,9 @@ public class Timer : MonoBehaviour
             timeRemaining = 0;
             timeIsRunning = false;
             meditated = true;
-            SceneManager.LoadScene("FloweringPotScene");
+                //change water pot state to have water
+                
+            SceneManager.LoadScene("Watering");
             }
         }
         
